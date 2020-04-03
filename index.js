@@ -39,12 +39,12 @@ function check_if_right() {
             //console.log(STORE.questions[STORE.currentQuestion - 1].image)
             $('.question_container').empty()
             $('.question_container').addClass('correct')
-            $('fieldset').append(`<div><img src='${STORE.questions[STORE.currentQuestion - 1].image}'><p class='title' style="text-align: center; padding-top: 10px">Right!</p><p>${STORE.questions[STORE.currentQuestion - 1].info}</p><button id = "right_continue" class="btn btn3">  Continue </button></div>`)
+            $('fieldset').append(`<div><img class = 'feedback_img'src='${STORE.questions[STORE.currentQuestion - 1].image}'><p class='title' style="text-align: center; padding-top: 10px">Right!</p><p>${STORE.questions[STORE.currentQuestion - 1].info}</p><button id = "right_continue" class="btn btn3">  Continue </button></div>`)
         }
         else {
             $('fieldset').empty()
             $('.question_container').addClass('incorrect')
-            $('fieldset').append(`<div><img src='${STORE.questions[STORE.currentQuestion - 1].image}'><p class='title' style="text-align: center">Incorrect !!!</p><p>The Correct Answer is ${STORE.questions[STORE.currentQuestion - 1].answer.replace('_', ' ')} <br>${STORE.questions[STORE.currentQuestion - 1].info}</p><button id = "wrong_continue" class='btn btn3'>  Continue </button></div>`)
+            $('fieldset').append(`<div><img class = 'feedback_img' src='${STORE.questions[STORE.currentQuestion - 1].image}'><p class='title' style="text-align: center">Incorrect !!!</p><p>The Correct Answer is ${STORE.questions[STORE.currentQuestion - 1].answer.replace('_', ' ')} <br>${STORE.questions[STORE.currentQuestion - 1].info}</p><button id = "wrong_continue" class='btn btn3'>  Continue </button></div>`)
         }
         $('.score').empty();
         $('.score').append(`<ul><li>Current Question: ${STORE.currentQuestion}/10</li><li>Current Score: ${STORE.score}</li></ul>`)

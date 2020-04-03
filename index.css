@@ -1,11 +1,18 @@
 *{
     box-sizing: border-box; 
   }
+html, body{
+    min-height: 100%;
+}
 
-body{
+.bg{
     background-image: url('images/c.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    margin: 0;
+
 }
 form{
     text-align: left;
@@ -27,6 +34,7 @@ h1 {
     background:rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     text-align: center;
+    margin-bottom: 15px;
 }
 .score{
     text-align: center;
@@ -109,8 +117,8 @@ ul{
     text-align: center;
     padding: 0px;
 }
-img{
-    height: 25%;
+.feedback_img{
+    width: 100%;
     max-width: 225px;
 }
 .final_box{
@@ -122,7 +130,7 @@ img{
 }
 /* @media screen and (min-with) */
 @media screen and (min-width: 515px){
-    img{
+    .feedback_img{
         height: 30%;
     }
   
@@ -133,7 +141,7 @@ img{
         
     width: 50%;
 }
-img{
+.feedback_img{
     width: 70%;
 }
 }
