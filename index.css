@@ -111,6 +111,7 @@ ul{
 }
 img{
     height: 25%;
+    max-width: 225px;
 }
 .final_box{
     width: 50%;

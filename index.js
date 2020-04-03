@@ -6,6 +6,7 @@ function start_Quiz() {
 }
 
 function render_questions() {
+    
     $('.score').empty();
     $('.score').append(`<ul><li>Current Question: ${STORE.currentQuestion + 1}/10</li><li>Current Score: ${STORE.score}</li></ul>`)
     $('fieldset').empty();
@@ -67,6 +68,7 @@ function next_question_handler() {
             STORE.currentQuestion = 0;
             STORE.score = 0;
             $('button').on('click', event => {
+                $('fieldset').removeClass('final_box')
                 render_questions();
             })
         }
