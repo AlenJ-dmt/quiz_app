@@ -34,6 +34,8 @@ h1 {
 .score li{
     display: inline-block;
     padding: 2%;
+    font-size: 18;
+    font-weight: 500;
 }
 span{
     float: right;
@@ -113,12 +115,21 @@ img{
 .final_box{
     width: 50%;
 }
+.title{
+    font-size: 18;
+    font-weight: 600;
+}
 /* @media screen and (min-with) */
 @media screen and (min-width: 515px){
     img{
         height: 40%;
     }
-    fieldset{
-        padding: 10px;
-    }
+  
+}
+
+@media screen and (min-width: 750px){
+.question_container{
+        
+    width: 50%;
+}
 }

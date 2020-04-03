@@ -7,12 +7,12 @@ function start_Quiz() {
 
 function render_questions() {
     $('.score').empty();
-    $('.score').append(`<ul><li>Current Question: ${STORE.currentQuestion + 1}</li><li>Current Score: ${STORE.score}</li></ul>`)
+    $('.score').append(`<ul><li>Current Question: ${STORE.currentQuestion + 1}/10</li><li>Current Score: ${STORE.score}</li></ul>`)
     $('fieldset').empty();
     $('fieldset').addClass('question_container')
     $('.question_container').append(
         `<div>
-             <p> ${STORE.questions[STORE.currentQuestion].question} </p>
+             <p class='title'> ${STORE.questions[STORE.currentQuestion].question} </p>
              <form> 
                 <label><input type="radio" value = ${STORE.questions[STORE.currentQuestion].options[0]} name= 'answer' >${STORE.questions[STORE.currentQuestion].options[0].replace('_', ' ')}</label><br>
                 <label><input type="radio" value = ${STORE.questions[STORE.currentQuestion].options[1]} name= 'answer' >${STORE.questions[STORE.currentQuestion].options[1].replace('_', ' ')}</label><br>
@@ -35,18 +35,18 @@ function check_if_right() {
 
         if (correct_answer) {
             STORE.score = STORE.score + 1
-            console.log(STORE.questions[STORE.currentQuestion - 1].image)
+            //console.log(STORE.questions[STORE.currentQuestion - 1].image)
             $('.question_container').empty()
             $('.question_container').addClass('correct')
-            $('fieldset').append(`<div><img src='${STORE.questions[STORE.currentQuestion - 1].image}'><p style="text-align: center; padding-top: 10px">Right!</p><p>${STORE.questions[STORE.currentQuestion - 1].info}</p><button id = "right_continue" class="btn btn3">  Continue </button></div>`)
+            $('fieldset').append(`<div><img src='${STORE.questions[STORE.currentQuestion - 1].image}'><p class='title' style="text-align: center; padding-top: 10px">Right!</p><p>${STORE.questions[STORE.currentQuestion - 1].info}</p><button id = "right_continue" class="btn btn3">  Continue </button></div>`)
         }
         else {
             $('fieldset').empty()
             $('.question_container').addClass('incorrect')
-            $('fieldset').append(`<div><img src='${STORE.questions[STORE.currentQuestion - 1].image}'><p style="text-align: center">Incorrect !!!</p><p>The Correct Answer is ${STORE.questions[STORE.currentQuestion - 1].answer.replace('_', ' ')} <br>${STORE.questions[STORE.currentQuestion - 1].info}</p><button id = "wrong_continue" class='btn btn3'>  Continue </button></div>`)
+            $('fieldset').append(`<div><img src='${STORE.questions[STORE.currentQuestion - 1].image}'><p class='title' style="text-align: center">Incorrect !!!</p><p>The Correct Answer is ${STORE.questions[STORE.currentQuestion - 1].answer.replace('_', ' ')} <br>${STORE.questions[STORE.currentQuestion - 1].info}</p><button id = "wrong_continue" class='btn btn3'>  Continue </button></div>`)
         }
         $('.score').empty();
-        $('.score').append(`<ul><li>Current Question: ${STORE.currentQuestion}</li><li>Current Score: ${STORE.score}</li></ul>`)
+        $('.score').append(`<ul><li>Current Question: ${STORE.currentQuestion}/10</li><li>Current Score: ${STORE.score}</li></ul>`)
 
     })
 }
