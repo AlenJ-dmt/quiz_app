@@ -123,14 +123,17 @@ img{
 /* @media screen and (min-with) */
 @media screen and (min-width: 515px){
     img{
-        height: 40%;
+        height: 30%;
     }
   
 }
 
-@media screen and (min-width: 750px){
+@media screen and (min-width: 850px){
 .question_container{
         
     width: 50%;
+}
+img{
+    width: 70%;
 }
 }
